@@ -188,7 +188,7 @@ def first_setup():
         golden_key = input(f"{Fore.MAGENTA}{Style.BRIGHT}└───> {Style.RESET_ALL}").strip()
         if len(golden_key) != 32:
             print(
-                f"\n{Fore.CYAN}{Style.BRIGHT}Неверный формат токена. Попробуй еще раз! {Fore.RED}\(!!˚0˚)/{Style.RESET_ALL}")
+                f"\n{Fore.CYAN}{Style.BRIGHT}Неверный формат токена. Попробуй еще раз! {Fore.RED}\\(!!˚0˚)/{Style.RESET_ALL}")
             continue
         config.set("FunPay", "golden_key", golden_key)
         break
@@ -196,11 +196,11 @@ def first_setup():
     while True:
         print(f"\n{Fore.MAGENTA}{Style.BRIGHT}┌── {Fore.CYAN}"
               f"Если хочешь, ты можешь указать свой User-agent (введи в Google \"my user agent\"). Или можешь просто нажать Enter. "
-              f"{Fore.RED}¯\(°_o)/¯{Style.RESET_ALL}")
+              f"{Fore.RED}¯\\(°_o)/¯{Style.RESET_ALL}")
         user_agent = input(f"{Fore.MAGENTA}{Style.BRIGHT}└───> {Style.RESET_ALL}").strip()
         if contains_russian(user_agent):
             print(
-                f"\n{Fore.CYAN}{Style.BRIGHT}Ты не знаешь, что такое Google? {Fore.RED}\(!!˚0˚)/{Style.RESET_ALL}")
+                f"\n{Fore.CYAN}{Style.BRIGHT}Ты не знаешь, что такое Google? {Fore.RED}\\(!!˚0˚)/{Style.RESET_ALL}")
             continue
         if user_agent:
             config.set("FunPay", "user_agent", user_agent)
@@ -227,13 +227,13 @@ def first_setup():
             username = telebot.TeleBot(token).get_me().username
             if not username.lower().startswith("funpay"):
                 print(
-                    f"\n{Fore.CYAN}{Style.BRIGHT}@username бота должен начинаться с \"funpay\"! {Fore.RED}\(!!˚0˚)/{Style.RESET_ALL}")
+                    f"\n{Fore.CYAN}{Style.BRIGHT}@username бота должен начинаться с \"funpay\"! {Fore.RED}\\(!!˚0˚)/{Style.RESET_ALL}")
                 continue
         except Exception as ex:
             s = ""
             if str(ex):
                 s = f" ({str(ex)})"
-            print(f"\n{Fore.CYAN}{Style.BRIGHT}Попробуй еще раз!{s} {Fore.RED}\(!!˚0˚)/{Style.RESET_ALL}")
+            print(f"\n{Fore.CYAN}{Style.BRIGHT}Попробуй еще раз!{s} {Fore.RED}\\(!!˚0˚)/{Style.RESET_ALL}")
             continue
         break
 
@@ -245,7 +245,7 @@ def first_setup():
         if len(password) < 8 or password.lower() == password or password.upper() == password or not any(
                 [i.isdigit() for i in password]):
             print(
-                f"\n{Fore.CYAN}{Style.BRIGHT}Это плохой пароль. Попробуй еще раз! {Fore.RED}\(!!˚0˚)/{Style.RESET_ALL}")
+                f"\n{Fore.CYAN}{Style.BRIGHT}Это плохой пароль. Попробуй еще раз! {Fore.RED}\\(!!˚0˚)/{Style.RESET_ALL}")
             continue
         break
 

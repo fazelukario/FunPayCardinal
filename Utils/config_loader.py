@@ -3,7 +3,6 @@
 """
 import configparser
 from configparser import ConfigParser, SectionProxy
-import codecs
 import os
 
 from Utils.exceptions import (ParamNotFoundError, EmptyValueError, ValueNotValidError, SectionNotFoundError,
@@ -53,7 +52,8 @@ def create_config_obj(config_path: str) -> ConfigParser:
     """
     config = ConfigParser(delimiters=(":",), interpolation=None)
     config.optionxform = str
-    config.read_file(codecs.open(config_path, "r", "utf8"))
+    with open(config_path, "r", encoding="utf-8") as f:
+        config.read_file(f)
     return config
 
 
